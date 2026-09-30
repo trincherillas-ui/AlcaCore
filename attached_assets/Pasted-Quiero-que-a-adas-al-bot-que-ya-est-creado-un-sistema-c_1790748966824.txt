@@ -1,0 +1,245 @@
+Quiero que añadas al bot que ya está creado un sistema completo de moderación y AutoMod.
+
+No rehagas el bot ni cambies su funcionamiento actual. Simplemente añade estas funcionalidades e intégralas con el sistema que ya existe.
+
+Quiero que tomes como referencia La Cabra Bot para el estilo, organización, funcionamiento de los avisos, embeds, logs y experiencia general de moderación. No quiero una copia exacta, sino algo inspirado en su funcionamiento.
+
+1. AutoMod
+
+Añade un AutoMod completo y configurable que pueda detectar:
+
+* Spam.
+* Flood.
+* Mensajes repetidos.
+* Exceso de menciones.
+* Menciones masivas.
+* Invitaciones de Discord.
+* Enlaces o dominios bloqueados.
+* Palabras o frases prohibidas.
+* Publicidad.
+
+Cada tipo de infracción debe poder tener su propia acción:
+
+* Eliminar mensaje.
+* Avisar.
+* Silenciar temporalmente.
+* Expulsar.
+* Banear.
+
+Debe poder activarse y desactivarse cada función individualmente.
+
+También debe existir una lista blanca para excluir:
+
+* Usuarios.
+* Roles.
+* Canales.
+
+2. Comandos de AutoMod
+
+Todos los comandos deben estar en español.
+
+Utiliza:
+
+/automod configurar
+
+/automod activar
+
+/automod desactivar
+
+/automod estado
+
+/automod lista-negra
+
+/automod lista-blanca
+
+/automod logs
+
+La configuración debe permitir establecer los límites y acciones del AutoMod.
+
+3. Moderación manual
+
+Añade estos comandos, todos en español:
+
+/ban <usuario> [razón]
+
+/desban <usuario/id> [razón]
+
+/expulsar <usuario> [razón]
+
+/silenciar <usuario> <duración> [razón]
+
+/desilenciar <usuario> [razón]
+
+/avisar <usuario> [razón]
+
+/desavisar <usuario> [id]
+
+/avisos <usuario>
+
+/limpiar <cantidad>
+
+/lentitud <duración>
+
+/bloquear
+
+/desbloquear
+
+4. Sistema de avisos
+
+Quiero un sistema completo de avisos.
+
+Cada aviso debe guardar:
+
+* Usuario.
+* Moderador.
+* Razón.
+* Fecha.
+* Número de aviso.
+
+Debe existir un sistema de sanciones automáticas según el número de avisos.
+
+Por ejemplo:
+
+* 1 aviso → aviso.
+* 2 avisos → silencio temporal.
+* 3 avisos → expulsión.
+* 4 avisos → ban.
+
+Los límites deben poder configurarse.
+
+5. Mensaje privado al usuario
+
+Esto es MUY IMPORTANTE.
+
+Cada vez que el bot sancione a un usuario debe intentar enviarle un MD automáticamente.
+
+Debe hacerlo al:
+
+* Banear.
+* Desbanear cuando corresponda.
+* Expulsar.
+* Silenciar.
+* Desilenciar cuando corresponda.
+* Avisar.
+* Aplicar una sanción automática mediante AutoMod.
+* Aplicar una sanción por acumulación de avisos.
+
+Los mensajes deben ser mediante embeds y tener un diseño limpio y profesional.
+
+Ejemplo de ban:
+
+🔨 Has sido baneado
+
+Servidor: Nombre del servidor
+Razón: Spam
+Moderador: @Moderador
+
+Ejemplo de aviso:
+
+⚠️ Has recibido un aviso
+
+Servidor: Nombre del servidor
+Razón: Spam
+Avisos: 2/3
+
+Ejemplo de silencio:
+
+🔇 Has sido silenciado
+
+Servidor: Nombre del servidor
+Duración: 10 minutos
+Razón: Spam
+Moderador: @Moderador
+
+Si el usuario tiene los MD cerrados, la sanción debe realizarse igualmente y simplemente indicarlo en los logs.
+
+6. Logs
+
+Añade logs de moderación mediante embeds.
+
+Deben registrarse:
+
+* Bans.
+* Desbans.
+* Expulsiones.
+* Silencios.
+* Desilencios.
+* Avisos.
+* Eliminación de avisos.
+* Mensajes eliminados por AutoMod.
+* Sanciones automáticas.
+* Cambios de configuración del AutoMod.
+
+Los logs deben mostrar claramente:
+
+* Usuario afectado.
+* Moderador.
+* Acción.
+* Razón.
+* Duración, si existe.
+* Fecha y hora.
+
+7. AutoMod y avisos
+
+Cuando AutoMod detecte una infracción, debe quedar registrado qué regla se activó y qué acción se tomó.
+
+Ejemplo:
+
+🤖 AutoMod
+
+Usuario: @Usuario
+Regla: Spam
+Acción: Silencio
+Duración: 5 minutos
+
+Si la acción genera un aviso, también debe aparecer en el historial de avisos del usuario.
+
+El usuario debe recibir su correspondiente MD cuando se aplique una sanción.
+
+8. Permisos
+
+Respeta completamente los permisos y jerarquía de Discord.
+
+Un moderador no debe poder sancionar a alguien con un rol igual o superior al suyo.
+
+El bot tampoco debe poder sancionar a usuarios que estén por encima de su propio rol.
+
+Los comandos de moderación solo deben estar disponibles para los usuarios que tengan los permisos correspondientes.
+
+9. Diseño y experiencia
+
+Quiero que todo el sistema tenga un diseño coherente y profesional.
+
+Toma La Cabra Bot como referencia para:
+
+* Embeds.
+* Avisos.
+* Logs.
+* Sistema de avisos.
+* Mensajes privados.
+* Organización de la información.
+* Experiencia de moderación.
+
+No quiero que sea una copia exacta; simplemente quiero una experiencia similar y bien organizada.
+
+10. Importante
+
+El bot ya está creado y funcionando.
+
+No quiero que rehagas el bot.
+
+No quiero que cambies funcionalidades que ya existen.
+
+No quiero explicaciones sobre cómo programarlo.
+
+Simplemente implementa estas funcionalidades en el bot actual y haz que todo quede integrado con lo que ya existe.
+
+Todos los nombres de comandos, opciones y textos destinados al usuario deben estar en español.
+
+La terminología debe ser siempre:
+
+* Avisar
+* Aviso
+* Avisos
+
+No utilices “warn”, “warning” ni “advertencia” en los comandos o textos visibles para los usuarios.
